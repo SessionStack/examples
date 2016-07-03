@@ -1,0 +1,13 @@
+{
+  "name": "sessionstack-problem-reporting",
+  "version": "1.0.0",
+  "authors": [
+    "info@sessionstack.com"
+  ],
+  "description": "A sample UI for problem reporting.",
+  "license": "MIT",
+  "homepage": "https://www.sessionstack.com",
+  "dependencies": {
+    "jquery": "~3.0.0"
+  }
+}
