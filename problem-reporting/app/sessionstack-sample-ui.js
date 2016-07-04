@@ -7,7 +7,7 @@
                     setIdleUI();
                 } else {
                     sessionstack('startRecording');
-                    setRecordingUI();;
+                    setRecordingUI();
                 }
             });
         });
