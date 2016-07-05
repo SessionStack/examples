@@ -3,11 +3,11 @@
         var isRecording = false;
 
         sessionstack('isRecording', function(result) {
-            if(result) {
-                isRecording = true;
+            isRecording = result;
+
+            if(isRecording) {
                 setRecordingUI();
             } else {
-                isRecording = false;
                 setIdleUI();
             }
         });
@@ -15,13 +15,13 @@
         $('.sessionstack-recording-button').click(function() {
             if (isRecording) {
                 sessionstack('stopRecording');
-                isRecording = false;
                 setIdleUI();
             } else {
                 sessionstack('startRecording');
-                isRecording = true;
                 setRecordingUI();
             }
+
+            isRecording = !isRecording;
         });
     });
 
