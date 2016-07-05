@@ -1,25 +1,27 @@
 (function() {
     $(document).ready(function() {
-        $('.sessionstack-recording-button').click(function() {
-            sessionstack('isRecording', function(result) {
-                if (result) {
-                    sessionstack('stopRecording');
-                    setIdleUI();
-                } else {
-                    sessionstack('startRecording');
-                    setRecordingUI();
-                }
-            });
-        });
-
+        var isRecording = false;
 
         sessionstack('isRecording', function(result) {
             if(result) {
+                isRecording = true;
                 setRecordingUI();
             } else {
+                isRecording = false;
                 setIdleUI();
             }
+        });
 
+        $('.sessionstack-recording-button').click(function() {
+            if (isRecording) {
+                sessionstack('stopRecording');
+                isRecording = false;
+                setIdleUI();
+            } else {
+                sessionstack('startRecording');
+                isRecording = true;
+                setRecordingUI();
+            }
         });
     });
 
